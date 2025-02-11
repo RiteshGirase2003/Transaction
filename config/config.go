@@ -66,7 +66,7 @@ func FirebaseInitialization() (*firestore.Client,error){
 // It uses the project environment loaded from .env file and reads the config file accordingly.
 // It returns a ServerConfig struct or an error if the file cannot be read or unmarshaled.
 func GetServerYamlConfig() (*entity.ServerConfig, error) {
-	var path = fmt.Sprintf("D:/GO Project/go-transaction/config/config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
 
 	var serverConfig entity.ServerConfig
 
@@ -89,7 +89,7 @@ func GetServerYamlConfig() (*entity.ServerConfig, error) {
 // GetPaymentAmountYamlConfig loads and returns the payment configuration from the YAML file.
 // It reads the configuration based on the project environment and unmarshals it into a PaymentConfig struct.
 func GetPaymentAmountYamlConfig() (*entity.PaymentConfig, error) {
-	var path = fmt.Sprintf("D:/GO Project/go-transaction/config/config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
 
 	var paymentConfig entity.PaymentConfig
 
@@ -112,7 +112,7 @@ func GetPaymentAmountYamlConfig() (*entity.PaymentConfig, error) {
 // GetSwaggerYamlConfig loads and returns the Swagger configuration from the YAML file.
 // It reads the Swagger section of the configuration and unmarshals it into a Swagger struct.
 func GetSwaggerYamlConfig() (*entity.Swagger, error) {
-	var path = fmt.Sprintf("D:/GO Project/go-transaction/config/config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
 
 	var swagger entity.Swagger
 
@@ -135,7 +135,7 @@ func GetSwaggerYamlConfig() (*entity.Swagger, error) {
 // GetApiYamlConfig loads and returns the API configuration from the YAML file.
 // It reads the API section of the configuration and unmarshals it into an Api struct.
 func GetApiYamlConfig() (*entity.Api, error) {
-	var path = fmt.Sprintf("D:/GO Project/go-transaction/config/config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
 
 	var api entity.Api
 
@@ -158,7 +158,7 @@ func GetApiYamlConfig() (*entity.Api, error) {
 // ReadEnvConfig loads the environment configuration from the .env file.
 // It reads the "PROJECT" value from the environment variables and returns it.
 func ReadEnvConfig() string {
-	if err := gotenv.Load("D:/GO Project/go-transaction/.env"); err != nil {
+	if err := gotenv.Load("/etc/secrets/.env"); err != nil {
 		log.Fatal().Err(err).Msg("Error loading .env file")
 	}
 
@@ -178,7 +178,7 @@ func ReadEnvConfig() string {
 // GetKey loads the secret key and secret string from the environment configuration.
 // It reads the values of "SECRET_KEY" and "SECRET_STRING" and returns them.
 func GetKey() (string, string) {
-	if err := gotenv.Load("D:/GO Project/go-transaction/.env"); err != nil {
+	if err := gotenv.Load("/etc/secrets/.env"); err != nil {
 		log.Fatal().Err(err).Msg("Error loading .env file")
 	}
 
