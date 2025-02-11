@@ -66,7 +66,7 @@ func FirebaseInitialization() (*firestore.Client,error){
 // It uses the project environment loaded from .env file and reads the config file accordingly.
 // It returns a ServerConfig struct or an error if the file cannot be read or unmarshaled.
 func GetServerYamlConfig() (*entity.ServerConfig, error) {
-	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config/config.%s.yaml", ReadEnvConfig())
 
 	var serverConfig entity.ServerConfig
 
@@ -89,7 +89,7 @@ func GetServerYamlConfig() (*entity.ServerConfig, error) {
 // GetPaymentAmountYamlConfig loads and returns the payment configuration from the YAML file.
 // It reads the configuration based on the project environment and unmarshals it into a PaymentConfig struct.
 func GetPaymentAmountYamlConfig() (*entity.PaymentConfig, error) {
-	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config/config.%s.yaml", ReadEnvConfig())
 
 	var paymentConfig entity.PaymentConfig
 
@@ -112,7 +112,7 @@ func GetPaymentAmountYamlConfig() (*entity.PaymentConfig, error) {
 // GetSwaggerYamlConfig loads and returns the Swagger configuration from the YAML file.
 // It reads the Swagger section of the configuration and unmarshals it into a Swagger struct.
 func GetSwaggerYamlConfig() (*entity.Swagger, error) {
-	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config/config.%s.yaml", ReadEnvConfig())
 
 	var swagger entity.Swagger
 
@@ -135,7 +135,7 @@ func GetSwaggerYamlConfig() (*entity.Swagger, error) {
 // GetApiYamlConfig loads and returns the API configuration from the YAML file.
 // It reads the API section of the configuration and unmarshals it into an Api struct.
 func GetApiYamlConfig() (*entity.Api, error) {
-	var path = fmt.Sprintf("./config.%s.yaml", ReadEnvConfig())
+	var path = fmt.Sprintf("./config/config.%s.yaml", ReadEnvConfig())
 
 	var api entity.Api
 
