@@ -21,7 +21,7 @@ import (
 // InitFirebase initializes the Firebase application with the given credentials and project ID.
 // It returns the Firebase app instance or an error if the initialization fails.
 func InitFirebase() (*firebase.App, error) {
-	filepath := "/etc/render/secrets/firebase.json"
+	filepath := "/etc/secrets/firebase.json"
 	projectID := "crud-b5a48"
 	opt := option.WithCredentialsFile(filepath)
 
