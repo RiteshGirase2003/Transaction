@@ -5,7 +5,7 @@ import (
 	"go-transaction/config"
 
 	"github.com/rs/zerolog/log"
-
+	"github.com/rs/cors"
 	ginzerolog "github.com/dn365/gin-zerolog"
 	"github.com/gin-gonic/gin"
 )
