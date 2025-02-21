@@ -24,6 +24,13 @@ import (
 func InitRoutes() *gin.Engine {
 	router := gin.Default()
 
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"*"}, // Allow all origins (change this for security)
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
+		AllowHeaders:     []string{"Content-Type", "Authorization"},
+		AllowCredentials: true,
+	}))
+
 	api, err := config.GetApiYamlConfig()
 	if err != nil {
 		log.Error().Err(err).Msg("Failed to load API YAML configuration")
