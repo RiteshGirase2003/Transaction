@@ -8,7 +8,7 @@ import (
 	"go-transaction/routes"
 
 	"github.com/rs/zerolog/log"
-	"github.com/rs/cors"
+	
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
